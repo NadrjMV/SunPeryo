@@ -52,6 +52,10 @@
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
+        /* Adiciona mais espaço no final do conteúdo para não ser coberto pela barra de navegação */
+        #main-content-mobile {
+            padding-bottom: 10rem; /* Aumentado para garantir visibilidade */
+        }
     </style>
 </head>
 <body>
@@ -449,7 +453,7 @@
                     console.log("Falha ao obter localização na verificação inicial.");
                     checkAndRenderLocationStatus();
                 },
-                { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+                { enableHighAccuracy: true, timeout: 15000, maximumAge: 25000 }
             );
         }
 
@@ -550,7 +554,7 @@
                     showToast("Não foi possível obter a localização.", true);
                     checkAndRenderLocationStatus();
                 },
-                { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+                { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 }
             );
         }
         
